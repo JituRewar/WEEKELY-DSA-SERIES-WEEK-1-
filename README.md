@@ -42,18 +42,7 @@ For int (4 bytes), p+1 moves by 4 bytes.
 Pointers are useful in arrays, dynamic memory allocation, and data structures.
 
 
-
-That's a great idea for a GitHub repository heading\! Here's a larger, more stylized version you can use, formatted to stand out.
-
-\<br\>
-
-# ✨ Week 1 – Day 2: **Binary Search** 🔍
-
-### **(O(log n) Time Complexity)**
-
------
-
-
+# Week 1 – Day 2: Binary Search (O(log n) Time Complexity)
 
 ## 📖 Topic Covered
 - Binary Search Algorithm
@@ -92,31 +81,40 @@ Steps:
 
 ## 📂 Code File
 See [`binary_search.cpp`](./binary_search.cpp)
-📌 binary_search.cpp
-#include<iostream>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
-int binarysearch(vector<int> arr1,int target){
-    int st=0,end=arr1.size()-1;
-    
-    while(st<=end){
-        int mid=(st+end)/2;
-        if(arr1[mid]>target) {
-           end=mid-1;
-        }
-        else if(arr1[mid]<target){
-            st=mid+1;
 
-        }
-        else return mid;
-    }
-    return -1;
-}
-int main(){
-    vector<int> arr1 = {-1,5,4,9,7,58,35};
-    int target = 35;
+// Iterative Binary Search
+int binarySearch(vector<int>& arr, int target) {
+    int left = 0, right = arr.size() - 1;
     
-    cout<<binarysearch(arr1,target)<<endl;
+    while (left <= right) {
+        int mid = left + (right - left) / 2; // prevents overflow
+
+        if (arr[mid] == target)
+            return mid; // target found
+        else if (arr[mid] < target)
+            left = mid + 1; // search right half
+        else
+            right = mid - 1; // search left half
+    }
+    return -1; // target not found
+}
+
+int main() {
+    vector<int> arr = {1, 3, 5, 7, 9, 11, 13};
+    int target = 7;
+
+    int result = binarySearch(arr, target);
+
+    if (result != -1)
+        cout << "Element " << target << " found at index " << result << endl;
+    else
+        cout << "Element not found" << endl;
+
     return 0;
 }
+
+
+
 
