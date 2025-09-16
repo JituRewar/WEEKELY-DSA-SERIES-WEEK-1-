@@ -43,7 +43,15 @@ Pointers are useful in arrays, dynamic memory allocation, and data structures.
 
 
 
- # Week 1 – Day 2: Binary Search (O(log n) Time Complexity)
+That's a great idea for a GitHub repository heading\! Here's a larger, more stylized version you can use, formatted to stand out.
+
+\<br\>
+
+# ✨ Week 1 – Day 2: **Binary Search** 🔍
+
+### **(O(log n) Time Complexity)**
+
+-----
 
 
 
