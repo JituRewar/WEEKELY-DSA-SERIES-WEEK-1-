@@ -43,7 +43,8 @@ Pointers are useful in arrays, dynamic memory allocation, and data structures.
 
 
 
-  #<h1 align="center" style="font-size:40px;">📅 Day 2 - Binary Search (O(log n) Time Complexity)</h1>
+ # Week 1 – Day 2: Binary Search (O(log n) Time Complexity)
+
 
 
 ## 📖 Topic Covered
