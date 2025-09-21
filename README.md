@@ -118,3 +118,58 @@ int main() {
 
 
 
+# 📅 Day 3 - Sorting & Search in Rotated Sorted Array
+
+## 📖 Topics Covered
+- Basics of **Array Sorting**
+- Problem solving with **Binary Search** on rotated arrays
+
+---
+
+## 🔥 Problem: [LeetCode #33 - Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+
+### Problem Statement
+Given a rotated sorted array `nums` and an integer `target`, return the index of `target` if it exists, otherwise return `-1`.
+
+- Array `nums` is sorted in ascending order and then rotated at some pivot.
+- Must be solved in **O(log n)** time.
+
+---
+
+### 🧩 Example
+
+
+code
+
+ while (st <= end) {
+        int mid = st + (end - st) / 2;
+
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        // Left half is sorted
+        if (arr[st] <= arr[mid]) {
+            if (arr[st] <= target && target <= arr[mid]) {
+                end = mid - 1;
+            } else {
+                st = mid + 1;
+            }
+        }
+        // Right half is sorted
+        else {
+            if (arr[mid] <= target && target <= arr[end]) {
+                st = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+    }
+
+    return -1; // target not found
+}
+
+
+
+
+
