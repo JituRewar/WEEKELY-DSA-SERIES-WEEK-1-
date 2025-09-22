@@ -170,6 +170,69 @@ code
 }
 
 
+# Week 1 / Day 4 — LeetCode 852: Peak Index in a Mountain Array
 
+**Folder structure (ready for GitHub)**
+
+```
+Week-1/
+  Day-4_LeetCode-852_Peak-Index-in-a-Mountain-Array/
+    README.md
+    solution.py
+    solution.cpp
+    tests/
+      README.md
+      test_cases.txt
+```
+
+---
+
+## README.md (contents)
+
+### Title
+
+**Day 4 — LeetCode 852: Peak Index in a Mountain Array**
+
+### Problem (short)
+
+Given an integer array `arr` that is guaranteed to be a mountain (strictly increasing then strictly decreasing), return *any* index `i` such that `arr[i]` is the peak of the mountain (i.e., maximum element). The peak is not at the ends.
+
+Constraints: `3 <= arr.length <= 10^4`, elements are distinct and form a mountain.
+
+### Key idea / Approach
+
+The peak is the maximum element. We can solve this in:
+
+* **O(n)** time by scanning for the maximum index. Simple and fine for many cases.
+* **O(log n)** time using **binary search** by comparing `arr[mid]` with `arr[mid+1]`:
+
+  * If `arr[mid] < arr[mid+1]`, the peak lies to the right, move `low = mid + 1`.
+  * Else, the peak is at `mid` or to the left, move `high = mid`.
+    This is similar to finding a local maximum in a unimodal array.
+
+### Complexity
+
+* Binary search solution: **Time:** O(log n), **Space:** O(1)
+* Linear scan solution: **Time:** O(n), **Space:** O(1)
+
+
+---
+
+code
+ while(st<=end){
+            int mid=st+(end-st)/2;
+            if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
+                
+                 return mid;
+            }
+            else{
+                if(arr[mid]>arr[mid-1]){
+                    st=mid+1;
+                }
+               else{
+                end=mid-1;
+               }
+            }
+        }
 
 
