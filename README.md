@@ -236,3 +236,64 @@ code
         }
 
 
+Week 1 · Day 5 — LeetCode 540: Single Element in a Sorted Array
+
+Problem (short)
+
+Given a sorted array where every element appears exactly twice except for one element which appears once, find that single element in O(log n) time and O(1) space.
+
+
+Idea / Approach
+
+Because the array is sorted and pairs are adjacent, we can use a binary search variant. Observe:
+
+Pairs start at even indices (0-based) until the single element appears.
+
+If mid is even and nums[mid] == nums[mid+1], the single element is to the right.
+
+If mid is even and nums[mid] != nums[mid+1], the single element is at or to the left.
+
+For odd mid, compare with mid-1 instead (or adjust mid to be even).
+
+This yields a loop that halves the search space each time (O(log n)).
+
+Time & Space
+
+Time complexity: O(log n)
+
+Space complexity: O(1)
+code cpp
+
+       
+        int st=0,end=arr.size()-1;
+        int mid=st+(end-st)/2;
+        if(arr.size()==1) return arr[0];
+        while(st<=end){
+            if(mid==0 && arr[mid]!=arr[mid+1]) return arr[mid];
+            if(mid==arr.size()-1 && arr[mid]!=arr[mid-1]) return arr[mid];
+            if(arr[mid]!=arr[mid+1] && arr[mid]!=arr[mid-1]){
+                return arr[mid];
+            }
+            if(mid%2==0){
+            if(arr[mid]==arr[mid-1]){
+                end=mid-1;
+            }    
+            else{
+                st=mid+1;
+            }
+            }
+            else{
+                if(arr[mid]==arr[mid-1]){
+                    st=mid+1;
+                }
+                else{
+                    end=mid-1;
+                }
+            }
+            
+            
+        }
+        return -1;
+
+    
+
