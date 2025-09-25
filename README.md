@@ -296,4 +296,75 @@ code cpp
         return -1;
 
     
+# 📚 DSA Weekly Series - Day 6  
+
+## 🚀 Today's Learning: Sorting Algorithms  
+
+On **Day 6**, I learned two basic sorting algorithms:  
+
+### 🔹 1. Bubble Sort
+- Repeatedly compares adjacent elements.  
+- Swaps them if they are in the wrong order.  
+- Time Complexity: **O(n²)**  
+- Space Complexity: **O(1)**  
+code+++
+void bubblesort(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+  
+}
+  void print(int arr[],int n){
+        for(int i=0;i<n;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+int main(){
+    int n=5;
+    int arr[]={4,5,2,3,1};
+    bubblesort(arr,n);
+    print(arr,n);
+
+### 🔹 2. Selection Sort
+- Finds the minimum element in the unsorted part.  
+- Places it at the beginning.  
+- Time Complexity: **O(n²)**  
+- Space Complexity: **O(1)**
+
+code+++
+
+void selectionsort(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        int smallestidx=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[j]<arr[smallestidx]){
+                smallestidx=j;
+            }
+        }
+                    swap(arr[i],arr[smallestidx]);
+
+    }
+}
+  
+  void print(int arr[],int n){
+        for(int i=0;i<n;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+int main(){
+    int n=5;
+    int arr[]={4,5,2,3,1};
+    selectionsort(arr,n);
+    print(arr,n);
+
+
+---
+
 
