@@ -367,4 +367,23 @@ int main(){
 
 ---
 
+# 📘 DSA Weekly – Week 1 Day 7  
+
+## 🔹 Today’s Progress
+- Practiced **DSA problems** related to:
+  - **Single Element in a Sorted Array** (LeetCode #540)
+  - **Sorting based problems** (concept revision + practice)
+
+## 🔹 Key Learnings
+- Binary Search can be used to find the single element in O(log n).
+- Sorting helps in solving problems where ordering or comparisons are needed.
+- Practicing variations of sorting questions improves problem-solving skills.
+
+## 🔹 Problems Solved
+1. **Single Element in a Sorted Array**  
+2. Few **sorting-based practice questions**
+
+---
+✅ *End of Day 7 – Consistency matters the most in DSA!*  
+
 
